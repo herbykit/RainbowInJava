@@ -1,4 +1,4 @@
-package net.ddns.kaigrealms;
+package edu.ncsu.csc226crew;
 
 import java.awt.Color;
 
