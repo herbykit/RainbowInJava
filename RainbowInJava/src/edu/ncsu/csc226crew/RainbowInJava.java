@@ -5,21 +5,22 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 public class RainbowInJava {
-	static int red = 0;
-	static int green = 0;
-	static int blue = 0;
-	static int bright = 100;
-	static String which = "Mono";
-	static JFrame frame;
+	private static int red = 0;
+	private static int green = 0;
+	private static int blue = 0;
+	private static int bright = 100;
+	private static String which = "Mono";
+//	private static JFrame frame;
+	private static Color[] panelColors = new Color[4];
 
-	private static void updateBackground() {
+	public static void updateBackground(JFrame frame) {
 		int bRed = bright * red / 100;
 		int bGreen = bright * green / 100;
 		int bBlue = bright * blue / 100;
 		frame.setBackground(new Color(255, bRed, bGreen, bBlue));
 		switch (which) {
 		case "Mono":
-			calcMono(frame.getBackground());
+			calcMono(frame.getBackground()); // add in the panels that frame has for the 3 generated related colours
 			break;
 		case "Complementary":
 			calcComplementary(frame.getBackground());
@@ -57,7 +58,6 @@ public class RainbowInJava {
 	}
 
 	private static void calcComplementary(Color c) {
-		Color[] panelColors = new Color[4];
 		int tempRed = bright * red / 100;
 		int tempGreen = bright * green / 100;
 		int tempBlue = bright * blue / 100;
@@ -72,38 +72,6 @@ public class RainbowInJava {
 		panelColors[2] = new Color(255, tempRed * 2 / 3, tempGreen * 2 / 3, tempBlue * 2 / 3);
 		panelColors[3] = new Color(255, tempRed + (255 - tempRed) * 3 / 4, tempGreen + (255 - tempGreen) * 3 / 4,
 				tempBlue + (255 - tempBlue) * 3 / 4);
-
-		// panel2
-		/**
-		 * tlHex tlRgb
-		 */
-		// panel1.BackColor = panelColors[0]; // Will have to define these later
-		// tlRgb.Text = makeRGBString(panelColors[0]);
-		// tlHex.Text = makeHexString(panelColors[0]);
-
-		// panel1
-		/**
-		 * trHex trRgb //
-		 */
-		// panel2.BackColor = panelColors[1];
-		// trRgb.Text = makeRGBString(panelColors[1]);
-		// trHex.Text = makeHexString(panelColors[1]);
-
-		// panel4
-		/**
-		 * blHex blRgb //
-		 */
-		// panel3.BackColor = panelColors[2];
-		// blRgb.Text = makeRGBString(panelColors[2]);
-		// blHex.Text = makeHexString(panelColors[2]);
-
-		// panel3
-		/**
-		 * brHex brRgb //
-		 */
-		// panel4.BackColor = panelColors[3];
-		// brRgb.Text = makeRGBString(panelColors[3]);
-		// brHex.Text = makeHexString(panelColors[3]);
 
 	}
 
