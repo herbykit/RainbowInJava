@@ -2,7 +2,7 @@
 A Java port of https://github.com/EnderBon/rainbow
 
 
-To run this program, open the provided jar folder with Java 1.8 or higher.
+To run this program, open the provided jar file with Java 1.8 or higher.
 
 
 Use of this program:
