@@ -13,7 +13,7 @@ to use. If you change the background color, it stays at the scheme that was last
 When the program is first run, it is set to the monochrome scheme.
 
 
-Later additions:
+Later planned additions:
 - Changing the background color to the color of the panel on the right clicked
 - Bar for saving color schemes
 - Ability to save and load schemes from a file (likely CSV with BGCOLOR,SCHEME)
